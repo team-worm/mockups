@@ -10,6 +10,9 @@ $foreground-color-0: #B5B5B5;
 $highlight-primary-color-0: #feb75b;
 $highlight-secondary-color-0: #2069c7;
 
+$background-highlight-primary-color-0: #715034;
+$background-highlight-secondary-color-0: #b26f34;
+
 body {
 	background: $background-color-1;
 	color: $foreground-color-0;
@@ -17,6 +20,8 @@ body {
 
 .file-browser {
 	background: $background-color-2;
+	position: relative;
+	overflow: hidden;
 	width: 250px;
 	padding: 5px;
 	border: 2px solid $background-color-0;
@@ -30,11 +35,21 @@ body {
 	}
 
 	.file-listing {
+		&.selected:before {
+			content: "";
+			height: 1.2em;
+			left: 0;
+			position: absolute;
+			right: 0;
+			background: $background-highlight-primary-color-0;
+		}
+
 		.file-icon {
 		}
 
 		.file-name {
 			margin-left: 4px;
+			position: relative;
 		}
 	}
 
