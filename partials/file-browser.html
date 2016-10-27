@@ -1,0 +1,37 @@
+<div class="file-browser">
+	<ul class="directory-lsiting-wrap">
+		<li class="file">
+			<div class="file-listing">
+				<span class="file-icon">
+					<span class="directory-caret"></span>
+					<span class="glyphicon glyphicon-folder-open"></span>
+				</span>
+				<span class="file-name">src/</span>
+			</div>
+			<ul class="directory-listing-wrap">
+				{{#each files}}
+				<li class="file-listing">
+					<span class="file-icon">
+						<span class="glyphicon glyphicon-file"></span>
+					</span>
+					<span class="file-name">{{this}}</span>
+				</li>
+				{{/each}}
+				<span class="glyphicon glyphicon-folder-close"></span>
+			</ul>
+		</li>
+		<li class="file">
+			<div class="file-listing">
+				<span class="file-icon">
+					<span class="directory-caret"></span>
+					<span class="glyphicon glyphicon-folder-open"></span>
+				</span>
+				<span class="file-name">src/</span>
+			</div>
+			<div class="directory-listing-wrap">
+				<span class="glyphicon glyphicon-file"></span>
+				<span class="glyphicon glyphicon-folder-close"></span>
+			</div>
+		</li>
+	</ul>
+</div>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<title>SPICE Debugger</title>
+		<meta name="author" content="WORM">
+
+		<link rel="stylesheet" href="styles.css">
+		<script src="handlebars-v4.0.5.js"></script>
+	</head>
+
+	<body>
+		<button id="expand-button" onclick="toggleAllDirectories()">expand</button>
+		<div id="content" class="container-fluid"></div>
+
+		<script>
+			var partials = [
+				'file-browser'
+			];
+
+			Promise.all(partials.map(initPartial))
+			.then(function() {
+				return fetch('templates/debugging-interface.html');
+			}).then(function(res) {
+				return res.text();
+			}).then(function(templateSource) {
+				var template = Handlebars.compile(templateSource);
+				var placeholder = document.getElementById('content');
+				var context = {files: ['0','1','2','3','4','5','6','7','8']};
+				placeholder.innerHTML = template(context);
+			});
+
+			function initPartial(name) {
+				return fetch('partials/' + name + '.html')
+				.then(function(res) {
+					return res.text();
+				}).then(function(source) {
+					Handlebars.registerPartial(name, source);
+				});
+			}
+
+			function toggleAllDirectories() {
+				var elements = Array.prototype.slice.call(document.getElementsByClassName('directory-caret'))
+					.concat(Array.prototype.slice.call(document.getElementsByClassName('directory-listing-wrap')));
+				elements.forEach(function(element) {
+					element.classList.toggle('expand');
+				});
+			}
+
+		</script>
+	</body>
+</html>

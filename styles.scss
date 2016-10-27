@@ -1,0 +1,71 @@
+$icon-font-path: "bootstrap-sass-3.3.7/assets/fonts/bootstrap/";
+@import "bootstrap-sass-3.3.7/assets/stylesheets/bootstrap";
+
+$background-color-0: #2B2B2B;
+$background-color-1: #3C3F41;
+
+$foreground-color-0: #B5B5B5;
+
+$highlight-primary-color-0: #feb75b;
+$highlight-secondary-color-0: #2069c7;
+
+body {
+	background: $background-color-0;
+	color: $foreground-color-0;
+}
+
+.file-browser {
+	background: $background-color-1;
+	width: 250px;
+
+	ul {
+		list-style-type: none;
+		padding-left: 35px;
+		li {
+		}
+	}
+
+	& > ul {
+		padding-left: 0;
+	}
+
+	.file-listing {
+		.file-icon {
+		}
+
+		.file-name {
+		}
+	}
+
+	.directory-listing-wrap {
+		max-height: 0px;
+		overflow: hidden;
+		transition: max-height 0.8s ease-in-out;
+		&.expand {
+			/* todo: use js to get the right height, since this breaks transition timing */
+			max-height: 400px;
+		}
+	}
+
+	.directory-caret {
+		display: inline-block;
+		width: 0;
+		height: 0;
+		margin-left: 2px;
+		margin-right: 2px;
+		vertical-align: middle;
+		border-left: 4px dashed;
+		border-left: 4px solid \9;
+		border-top: 4px solid transparent;
+		border-bottom: 4px solid transparent;
+		transition: transform 0.2s ease-in-out;
+
+		&.expand {
+			transform: rotate(90deg);
+		}
+	}
+}
+
+.glyphicon {
+	color: $highlight-primary-color-0;
+}
