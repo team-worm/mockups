@@ -1,5 +1,5 @@
 <div class="file-browser">
-	<ul class="directory-lsiting-wrap">
+	<ul class="directory-listing-wrap">
 		<li class="file">
 			<div class="file-listing">
 				<span class="file-icon">
@@ -9,28 +9,55 @@
 				<span class="file-name">src/</span>
 			</div>
 			<ul class="directory-listing-wrap">
-				{{#each files}}
-				<li class="file-listing">
-					<span class="file-icon">
-						<span class="glyphicon glyphicon-file"></span>
-					</span>
-					<span class="file-name">{{this}}</span>
+				{{#each filesA}}
+				<li class="file">
+					<div class="file-listing">
+						<span class="file-icon">
+							<span class="directory-caret invisible"></span>
+							<span class="glyphicon glyphicon-file"></span>
+						</span>
+						<span class="file-name">{{this}}</span>
+					</div>
 				</li>
 				{{/each}}
-				<span class="glyphicon glyphicon-folder-close"></span>
+				<li class="file">
+					<div class="file-listing">
+						<span class="file-icon">
+							<span class="directory-caret"></span>
+							<span class="glyphicon glyphicon-folder-close"></span>
+						</span>
+						<span class="file-name">more/</span>
+					</div>
+					<ul class="directory-listing-wrap">
+						<li class="file-listing">
+							<span class="file-icon">
+								<span class="directory-caret invisible"></span>
+								<span class="glyphicon glyphicon-file"></span>
+							</span>
+							<span class="file-name">world</span>
+						</li>
+					</ul>
+				</li>
+				{{#each filesB}}
+				<li class="file">
+					<div class="file-listing">
+						<span class="file-icon">
+							<span class="directory-caret invisible"></span>
+							<span class="glyphicon glyphicon-file"></span>
+						</span>
+						<span class="file-name">{{this}}</span>
+					</div>
+				</li>
+				{{/each}}
 			</ul>
 		</li>
 		<li class="file">
 			<div class="file-listing">
 				<span class="file-icon">
-					<span class="directory-caret"></span>
-					<span class="glyphicon glyphicon-folder-open"></span>
+					<span class="directory-caret invisible"></span>
+					<span class="glyphicon glyphicon-file"></span>
 				</span>
-				<span class="file-name">src/</span>
-			</div>
-			<div class="directory-listing-wrap">
-				<span class="glyphicon glyphicon-file"></span>
-				<span class="glyphicon glyphicon-folder-close"></span>
+				<span class="file-name">hello</span>
 			</div>
 		</li>
 	</ul>

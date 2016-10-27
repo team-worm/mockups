@@ -11,7 +11,7 @@
 	</head>
 
 	<body>
-		<button id="expand-button" onclick="toggleAllDirectories()">expand</button>
+		<button id="expand-button" class="btn btn-default" onclick="toggleAllDirectories()">expand</button>
 		<div id="content" class="container-fluid"></div>
 
 		<script>
@@ -27,7 +27,7 @@
 			}).then(function(templateSource) {
 				var template = Handlebars.compile(templateSource);
 				var placeholder = document.getElementById('content');
-				var context = {files: ['0','1','2','3','4','5','6','7','8']};
+				var context = {filesA: ['a.cpp','b.cpp','c.cpp','d.cpp','e.cpp','f.cpp'], filesB: ['g.cpp','h.cpp','i.cpp']};
 				placeholder.innerHTML = template(context);
 			});
 
