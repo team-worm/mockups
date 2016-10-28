@@ -182,21 +182,40 @@ body {
 	border: 2px solid $background-color-0;
 }
 
-.type-chooser{
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
-.var-chooser{
-	padding-top: 5px;
-}
-
 .spice-color{
 	background-color: $background-color-2;
 }
 
+.cust-padding-top{
+	padding-top: 20px;
+}
+
+.cust-padding-left{
+	padding-left: 200px;
+}
+
+.cust-padding-bottom{
+	padding-bottom: 10px;
+}
+
 .selected-types{
 	padding-top: 15px;
+}
+
+.spice-button{
+	border: 2px solid $background-color-0;
+	font-size: 20px;
+	font-family: sans-serif;
+	line-height: 1.42857;
+	webkit-appearance: button;
+}
+
+select{
+	border: 2px solid $background-color-0;
+	font-size: 20px;
+	line-height: 1.42857;
+	webkit-appearance: button;
+	font-family: sans-serif;
 }
 
 .glyphicon {
