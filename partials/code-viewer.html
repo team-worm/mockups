@@ -1,14 +1,14 @@
 <div class="code-viewer">
-	<div class="row">
-		<div class="col-xs-1 col-line-number">
-			1<br>
-			2<br>
-			3<br>
+	{{#lines}}
+		<div class="line">
+			<div class="col line-number">{{@index}}</div>
+			<div class="col code-textbox">{{{code}}}</div>
+			<div class="col execution-state">
+				{{#states}}
+				<div class="state-iteration" style="width: {{../width}}">{{{state}}}</div>
+				{{/states}}
+			</div>
 		</div>
-		<div class="col-xs-11">
-			<div class="code-textbox">code code
-code code code
-			hello</div>
-		</div>
-	</div>
+	{{/lines}}
+</div>
 </div>

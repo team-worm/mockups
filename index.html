@@ -30,8 +30,31 @@
     }).then(function(templateSource) {
         var template = Handlebars.compile(templateSource);
         var placeholder = document.getElementById('content');
-        var context = {filesA: ['a.cpp','b.cpp','c.cpp','d.cpp','e.cpp','f.cpp'], filesB: ['g.cpp','h.cpp','i.cpp']};
-        placeholder.innerHTML = template(context);
+        //var context = {filesA: ['a.cpp','b.cpp','c.cpp','d.cpp','e.cpp','f.cpp'], filesB: ['g.cpp','h.cpp','i.cpp']};
+		var context = {
+			codeViewer: {
+				lines: [
+					{ code: 'int a = 1;', width: '70px', states: [{state: 'a=1'}]},
+					{ code: 'for(int i = 0; i < 5; i++) {', width: '70px', states: [{state: 'i=0'}, {state: 'i=1'}, {state: 'i=2'}, {state: 'i=3'}, {state: 'i=4'}]},
+					{ code: '   a *= 2', width: '70px', states: [{state: 'a=2'}, {state: 'a=4'}, {state: 'a=8'}, {state: 'a=16'}, {state: 'a=32'}]},
+					{ code: '}', width: '70px', states: []},
+				]
+			}
+		};
+
+		var context2 = {
+			codeViewer: {
+				lines: [
+					{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'},{state: '<img src="images/arr-9.png">'}]},
+					{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
+					{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
+					{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
+					{ code: '}', width: '150px', states: []}
+				]
+			}
+		};
+
+        placeholder.innerHTML = template(context2);
     });
 
     function initPartial(name) {
