@@ -4,11 +4,8 @@
 			<div class="col line-number">{{@index}}</div>
 			<div class="col code-textbox">{{{code}}}</div>
 			<div class="col execution-state">
-				{{#states}}
-				<div class="state-iteration" style="width: {{../width}}">{{{state}}}</div>
-				{{/states}}
+				{{> state-column this}}
 			</div>
 		</div>
 	{{/lines}}
-</div>
 </div>

@@ -20,9 +20,13 @@
         'code-viewer',
         'state-timeline',
         'type-mapper',
-		'menu-bar'
+		'menu-bar',
+		'state-column'
     ];
 
+	var sortColWidthInnerLoop = '200px';
+	var sortColWidthOuterLoop = '650px';
+	var sortColWidthFunction = '1400px';
 	var templates = [
 		{ url: 'templates/debugging-interface.html',
 			context: {
@@ -51,17 +55,160 @@
 				},
 				codeViewer: {
 					lines: [
-						{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'},{state: '<img src="images/arr-9.png">'}]},
-						{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
-						{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
-						{ code: '', width: '200px', states: [{state: '<img src="images/arr-9.png">'}]},
-						{ code: '}', width: '150px', states: []}
+					{ code:'void quickSort(int arr[], int left, int right) {', width: sortColWidthFunction, states: [
+						{width: sortColWidthOuterLoop, states: [
+							{width: sortColWidthInnerLoop, states: [
+								{state: 'left=0, right=7'}
+							]}
+						]},
+						{width: sortColWidthOuterLoop, states: [
+							{width: sortColWidthInnerLoop, states: [
+								{state: 'left=0, right=2'}
+							]}
+						]},
+						{width: sortColWidthOuterLoop, states: [
+							{width: sortColWidthInnerLoop, states: [
+								{state: 'left=1, right=2'}
+							]}
+						]},
+						{width: sortColWidthOuterLoop, states: [
+							{width: sortColWidthInnerLoop, states: [
+								{state: 'left=4, right=7'}
+							]}
+						]},
+						{width: sortColWidthOuterLoop, states: [
+							{width: sortColWidthInnerLoop, states: [
+								{state: 'left=4, right=5'}
+							]}
+						]}
+					]},
+						{ code:'      int i = left, j = right;', width: sortColWidthFunction, states: []},
+						{ code:'      int tmp;', width: sortColWidthFunction, states: []},
+						{ code:'      int pivot = arr[(left + right) / 2];', width: sortColWidthFunction, states: [
+							{width: sortColWidthOuterLoop, states: [
+								{width: sortColWidthInnerLoop, states: [
+									{state: '<img src="images/arr/1.png">'}
+								]}
+							]},
+							{width: sortColWidthOuterLoop, states: [
+								{width: sortColWidthInnerLoop, states: [
+									{state: '<img src="images/arr/10.png">'}
+								]}
+							]},
+							{width: sortColWidthOuterLoop, states: [
+								{width: sortColWidthInnerLoop, states: [
+									{state: '<img src="images/arr/13.png">'}
+								]}
+							]},
+							{width: sortColWidthOuterLoop, states: [
+								{width: sortColWidthInnerLoop, states: [
+									{state: '<img src="images/arr/15.png">'}
+								]}
+							]},
+							{width: sortColWidthOuterLoop, states: [
+								{width: sortColWidthInnerLoop, states: [
+									{state: '<img src="images/arr/20.png">'}
+								]}
+							]}
+						]},
+						{ code:' ', width: sortColWidthFunction, states: []},
+						{ code:'      /* partition */', width: sortColWidthFunction, states: []},
+						{ code:'      while (i &gt;= j) {', width: sortColWidthFunction, states: []},
+							{ code:'            while (arr[j] &lt; pivot)', width: sortColWidthFunction, states: []},
+							{ code:'                  j--;', width: sortColWidthFunction, states: [
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/2.png">'},
+										{state: '<img src="images/arr/3.png">'},
+										{state: '<img src="images/arr/4.png">'}
+									]},
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/8.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/11.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: []},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/14.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/16.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+									]},
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/21.png">'}
+									]}
+								]}
+							]},
+							{ code:'            while (arr[i] &lt; pivot)', width: sortColWidthFunction, states: []},
+							{ code:'                  i++;', width: sortColWidthFunction, states: [
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/5.png">'},
+										{state: '<img src="images/arr/6.png">'}
+									]},
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/9.png">'}
+									]}
+								]}
+							]},
+							{ code:'            if (i &lt;= j) {', width: sortColWidthFunction, states: []},
+								{ code:'                  tmp = arr[i];', width: sortColWidthFunction, states: []},
+								{ code:'                  arr[i] = arr[j];', width: sortColWidthFunction, states: []},
+								{ code:'                  arr[j] = tmp;', width: sortColWidthFunction, states: []},
+								{ code:'                  i++;', width: sortColWidthFunction, states: []},
+								{ code:'                  j--;', width: sortColWidthFunction, states: []},
+								{ code:'            }', width: sortColWidthFunction, states: [
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/7.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/12.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/14.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/18.png">'}
+									]}
+								]},
+								{width: sortColWidthOuterLoop, states: [
+									{width: sortColWidthInnerLoop, states: [
+										{state: '<img src="images/arr/21.png">'}
+									]}
+								]}
+							]},
+							{ code:'      };', width: sortColWidthFunction, states: []},
+						{ code:' ', width: sortColWidthFunction, states: []},
+						{ code:'      /* recursion */', width: sortColWidthFunction, states: []},
+						{ code:'      if (left &lt; j)', width: sortColWidthFunction, states: []},
+						{ code:'            quickSort(arr, left, j);', width: sortColWidthFunction, states: []},
+						{ code:'      if (i &lt; right)', width: sortColWidthFunction, states: []},
+						{ code:'            quickSort(arr, i, right);', width: sortColWidthFunction, states: []},
+						{ code:'}', width: sortColWidthFunction, states: []}
 					]
 				}
 			}
 		}
 	];
-	var templateData = templates[1];
+	var templateData = templates[2];
 
     Promise.all(partials.map(initPartial))
             .then(function() {
