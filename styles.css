@@ -5807,14 +5807,14 @@ button.close {
   .hidden-print {
     display: none !important; } }
 body {
-  background: #313335;
+  background: #3C3F41;
   color: #B5B5B5; }
 
 .file-browser {
   background: #3C3F41;
   position: relative;
   overflow: hidden;
-  width: 250px;
+  width: 100%;
   padding: 5px;
   border: 2px solid #2B2B2B; }
   .file-browser ul {
@@ -5855,6 +5855,33 @@ body {
     transition: transform 0.2s ease-in-out; }
     .file-browser .directory-caret.expand {
       transform: rotate(90deg); }
+
+.code-viewer {
+  background: #2B2B2B;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #313335; }
+  .code-viewer .col-line-number {
+    background: #313335;
+    font-family: Courier, 'New Courier', monospace;
+    width: auto; }
+  .code-viewer .code-textbox {
+    display: block;
+    unicode-bidi: embed;
+    font-family: Courier, 'New Courier', monospace;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    /*font-size: 12px;}*/ }
+
+.state-timeline {
+  background: #2B2B2B;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #313335; }
 
 .glyphicon {
   color: #feb75b; }
