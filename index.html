@@ -1,55 +1,59 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
+<head>
+    <meta charset="utf-8">
 
-		<title>SPICE Debugger</title>
-		<meta name="author" content="WORM">
+    <title>SPICE Debugger</title>
+    <meta name="author" content="WORM">
 
-		<link rel="stylesheet" href="styles.css">
-		<script src="handlebars-v4.0.5.js"></script>
-	</head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="handlebars-v4.0.5.js"></script>
+</head>
 
-	<body>
-		<button id="expand-button" class="btn btn-default" onclick="toggleAllDirectories()">expand</button>
-		<div id="content" class="container-fluid"></div>
+<body>
+<button id="expand-button" class="btn btn-default" onclick="toggleAllDirectories()">expand</button>
+<div id="content" class="container-fluid"></div>
 
-		<script>
-			var partials = [
-				'file-browser',
-				'code-viewer',
-				'state-timeline'
-			];
+<script>
+    var partials = [
+        'file-browser',
+        'code-viewer',
+        'state-timeline',
+        'type-mapper'
+    ];
 
-			Promise.all(partials.map(initPartial))
-			.then(function() {
-				return fetch('templates/debugging-interface.html');
-			}).then(function(res) {
-				return res.text();
-			}).then(function(templateSource) {
-				var template = Handlebars.compile(templateSource);
-				var placeholder = document.getElementById('content');
-				var context = {filesA: ['a.cpp','b.cpp','c.cpp','d.cpp','e.cpp','f.cpp'], filesB: ['g.cpp','h.cpp','i.cpp']};
-				placeholder.innerHTML = template(context);
-			});
+    Promise.all(partials.map(initPartial))
+            .then(function() {
+                return fetch('templates/debugging-interface.html');
+            }).then(function(res) {
+        return res.text();
+    }).then(function(templateSource) {
+        var template = Handlebars.compile(templateSource);
+        var placeholder = document.getElementById('content');
+        var context = {filesA: ['a.cpp','b.cpp','c.cpp','d.cpp','e.cpp','f.cpp'], filesB: ['g.cpp','h.cpp','i.cpp']};
+        placeholder.innerHTML = template(context);
+    });
 
-			function initPartial(name) {
-				return fetch('partials/' + name + '.html')
-				.then(function(res) {
-					return res.text();
-				}).then(function(source) {
-					Handlebars.registerPartial(name, source);
-				});
-			}
+    function initPartial(name) {
+        return fetch('partials/' + name + '.html')
+                .then(function(res) {
+                    return res.text();
+                }).then(function(source) {
+                    Handlebars.registerPartial(name, source);
+                });
+    }
 
-			function toggleAllDirectories() {
-				var elements = Array.prototype.slice.call(document.getElementsByClassName('directory-caret'))
-					.concat(Array.prototype.slice.call(document.getElementsByClassName('directory-listing-wrap')));
-				elements.forEach(function(element) {
-					element.classList.toggle('expand');
-				});
-			}
+    function toggleAllDirectories() {
+        var elements = Array.prototype.slice.call(document.getElementsByClassName('directory-caret'))
+                .concat(Array.prototype.slice.call(document.getElementsByClassName('directory-listing-wrap')));
+        elements.forEach(function(element) {
+            element.classList.toggle('expand');
+        });
+    }
 
-		</script>
-	</body>
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
 </html>

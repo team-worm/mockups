@@ -16,5 +16,3 @@ Host the root directory with any fileserver, e.g:
 $ npm install -g http-server
 $ http-server
 ```
-
-

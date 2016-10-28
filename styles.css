@@ -5883,6 +5883,23 @@ body {
   padding: 5px;
   border: 2px solid #313335; }
 
+.type-mapper {
+  padding: 5px;
+  border: 2px solid #2B2B2B; }
+
+.type-chooser {
+  padding-top: 5px;
+  padding-bottom: 5px; }
+
+.var-chooser {
+  padding-top: 5px; }
+
+.spice-color {
+  background-color: #3C3F41; }
+
+.selected-types {
+  padding-top: 15px; }
+
 .glyphicon {
   color: #feb75b; }
 
