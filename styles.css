@@ -5922,7 +5922,7 @@ body {
   border: 2px solid #313335; }
 
 .type-mapper {
-  padding: 5px;
+  padding: 0px;
   border: 2px solid #2B2B2B; }
 
 .spice-color {
@@ -5937,19 +5937,16 @@ body {
 .cust-padding-bottom {
   padding-bottom: 10px; }
 
-.selected-types {
-  padding-top: 15px; }
-
 .spice-button {
   border: 2px solid #2B2B2B;
-  font-size: 20px;
+  font-size: 18px;
   font-family: sans-serif;
   line-height: 1.42857;
   webkit-appearance: button; }
 
 select {
   border: 2px solid #2B2B2B;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.42857;
   webkit-appearance: button;
   font-family: sans-serif; }
