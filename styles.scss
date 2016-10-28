@@ -4,8 +4,11 @@ $icon-font-path: "bootstrap-sass-3.3.7/assets/fonts/bootstrap/";
 $background-color-0: #2B2B2B;
 $background-color-1: #313335;
 $background-color-2: #3C3F41;
+$background-color-3: #ca934d;
 
 $foreground-color-0: #B5B5B5;
+
+$foreground-color-3: #ffffff;
 
 $highlight-primary-color-0: #feb75b;
 $highlight-secondary-color-0: #2069c7;
@@ -175,6 +178,36 @@ body {
 	width: 100%;
 	padding: 5px;
 	border: 2px solid $background-color-1;
+}
+
+.menu-bar {
+	background: $background-color-3;
+	color: $foreground-color-3;
+	width: 100%;
+	border: none;
+	border-radius: 0;
+	height: 35px;
+	position: relative;
+	
+	&:before {
+	position: absolute;
+    content: "";
+    height: 100%;
+    left: 0;
+    width: 100vw;
+  }
+
+	.navbar-brand {
+		color: $foreground-color-3;
+		border-right: 2px solid $background-highlight-primary-color-0;
+	}
+
+	.navbar-nav > li {
+		border-right: 1px solid $background-highlight-primary-color-0;
+	}
+	.navbar-nav > li > a {
+		color: $foreground-color-3;
+	}
 }
 
 .type-mapper{

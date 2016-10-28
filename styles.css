@@ -5921,6 +5921,28 @@ body {
   padding: 5px;
   border: 2px solid #313335; }
 
+.menu-bar {
+  background: #ca934d;
+  color: #ffffff;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  height: 35px;
+  position: relative; }
+  .menu-bar:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    left: 0;
+    width: 100vw; }
+  .menu-bar .navbar-brand {
+    color: #ffffff;
+    border-right: 2px solid #715034; }
+  .menu-bar .navbar-nav > li {
+    border-right: 1px solid #715034; }
+  .menu-bar .navbar-nav > li > a {
+    color: #ffffff; }
+
 .type-mapper {
   padding: 5px;
   border: 2px solid #2B2B2B; }
