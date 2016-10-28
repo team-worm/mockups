@@ -5947,18 +5947,34 @@ body {
   padding: 5px;
   border: 2px solid #2B2B2B; }
 
-.type-chooser {
-  padding-top: 5px;
-  padding-bottom: 5px; }
-
-.var-chooser {
-  padding-top: 5px; }
-
 .spice-color {
   background-color: #3C3F41; }
 
+.cust-padding-top {
+  padding-top: 20px; }
+
+.cust-padding-left {
+  padding-left: 200px; }
+
+.cust-padding-bottom {
+  padding-bottom: 10px; }
+
 .selected-types {
   padding-top: 15px; }
+
+.spice-button {
+  border: 2px solid #2B2B2B;
+  font-size: 20px;
+  font-family: sans-serif;
+  line-height: 1.42857;
+  webkit-appearance: button; }
+
+select {
+  border: 2px solid #2B2B2B;
+  font-size: 20px;
+  line-height: 1.42857;
+  webkit-appearance: button;
+  font-family: sans-serif; }
 
 .glyphicon {
   color: #feb75b; }
