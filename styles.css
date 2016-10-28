@@ -5926,7 +5926,8 @@ body {
   border: 2px solid #2B2B2B; }
 
 .spice-color {
-  background-color: #3C3F41; }
+  background-color: #3C3F41;
+  color: white; }
 
 .cust-padding-top {
   padding-top: 20px; }
@@ -5942,7 +5943,14 @@ body {
   font-size: 18px;
   font-family: sans-serif;
   line-height: 1.42857;
-  webkit-appearance: button; }
+  webkit-appearance: button;
+  background-color: #3C3F41;
+  color: #ffffff; }
+
+.border-box {
+  height: 50%;
+  width: 50%;
+  border: 3px solid #2B2B2B; }
 
 select {
   border: 2px solid #2B2B2B;

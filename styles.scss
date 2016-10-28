@@ -184,6 +184,7 @@ body {
 
 .spice-color{
 	background-color: $background-color-2;
+	color: white;
 }
 
 .cust-padding-top{
@@ -205,6 +206,14 @@ body {
 	font-family: sans-serif;
 	line-height: 1.42857;
 	webkit-appearance: button;
+	background-color: $background-color-2;
+	color: #ffffff
+}
+
+.border-box{
+	height: 50%;
+	width: 50%;
+	border: 3px solid $background-color-0;
 }
 
 select{
