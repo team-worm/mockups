@@ -1,0 +1,42 @@
+<div class="startup">
+    <div class="row">
+        <div class="col-sm-4">
+            <h2>Launch a process</h2>
+            <div class="form-group">
+                {{>file-browser files}}
+            </div>
+            <button id="expand-button" class="btn btn-primary spice-button" onclick="toggleAllDirectories()">Expand</button>
+            <button id="launch-button" class="btn btn-primary pull-right spice-button">Launch</button>
+        </div>
+
+        <div class="col-sm-4">
+            <h2>Attach to a process</h2>
+            <div class="form-group spice-color">
+                <select multiple class="form-control spice-color" height="500px">
+                    <option>Firefox</option>
+                    <option>Vi Improved</option>
+                    <option>Windows Command Processor</option>
+                    <option>Calculator</option>
+                    <option>Cortana</option>
+                    <option>Microsoft Solitaire Collection</option>
+                </select>
+            </div>
+            <button id="attach-button" class="btn btn-primary pull-right spice-button">Attach</button>
+        </div>
+
+        <div class="col-sm-4">
+            <h2>Connect to remote SPICE host</h2>
+            <form>
+                <div class="form-group spice-color">
+                    <label>Host</label>
+                    <input type="text" class="form-control spice-color" placeholder="localhost">
+                </div>
+                <div class="form-group spice-color">
+                    <label>Port</label>
+                    <input type="number" class="form-control spice-color" placeholder="1337">
+                </div>
+                <button type="submit" class="btn btn-primary pull-right spice-button">Connect</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,103 +1,55 @@
 <div class="type-mapper">
-    <div class="row" style="width:25%">
-        <div class="col-sm-4">
-            <div class="cust-padding-bottom">
-                Variable:
-            </div>
-            <select id="var-chooser" class="spice-color">
-                <option>arr1</option>
-                <option>tree1</option>
-                <option>hash1</option>
-            </select>
-        </div>
+	<h2>Map a type to a visualization</h3>
 
-        <div class="col-sm-4">
-            <div class="cust-padding-bottom">
-                Type:
-            </div>
-            <select id="type-chooser" class="spice-color">
-                <option>Array</option>
-                <option>Tree</option>
-                <option>Hash Map</option>
-            </select>
-        </div>
+	<form>
+		<div class="form-group spice-color row">
+			<div class="col-sm-6">
+				<label for="var-chooser">Variable</label>
+				<select id="var-chooser" class="form-control spice-color">
+					<option>arr1</option>
+					<option>tree1</option>
+					<option>hash1</option>
+				</select>
+			</div>
 
-        <div class="col-sm-4">
-            <div class="selected-types">
-                <b>Current Mappings:</b>
-                <ul>
-                    <li>arr1 --> Array</li>
-                    <li>tree2 --> Tree</li>
-                    <li>hash3 --> Hash Map</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-        <!-- button for modal -->
-        <button type="button" class="btn btn-primary spice-color spice-button" data-toggle="modal" data-target="#additional-val-modal">
-            Add Mapping
-        </button>
-</div>
+			<div class="col-sm-6">
+				<label for="type-chooser">Type</label>
+				<select id="type-chooser" class="form-control spice-color">
+					<option>Vector</option>
+					<option>Tree</option>
+					<option>Hash Map</option>
+				</select>
+			</div>
+		</div>
 
-<!-- Modal -->
-<div class="modal fade" id="additional-val-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog spice-color" role="document">
-        <div class="modal-content spice-color">
-            <div class="modal-header spice-color">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title spice-color" id="myModalLabel">Please specify values for array arr1</h4>
-            </div>
-            <div class="modal-body spice-color">
+		<div class="form-group spice-color">
+			<label>Data Pointer</label>
+			<select class="form-control spice-color">
+				<option selected>char* arr</option>
+				<option>int length</option>
+				<option>int capacity</option>
+			</select>
+		</div>
 
-                <div class="row">
+		<div class="form-group spice-color">
+			<label>Length</label>
+			<select class="form-control spice-color">
+				<option>char* arr</option>
+				<option selected>int length</option>
+				<option>int capacity</option>
+			</select>
+		</div>
 
-                    <div class="col-sm-4 container cust-padding-top">
-                        <div class="cust-padding-bottom">
-                            Data Pointer
-                        </div>
-                        <select class="spice-color">
-                            <option>char* arr</option>
-                            <option>int length</option>
-                            <option>int capacity</option>
-                        </select>
-                    </div>
+		<div class="form-group spice-color">
+			<label>Capacity</label>
+			<select class="form-control spice-color">
+				<option>char* arr</option>
+				<option>int length</option>
+				<option selected>int capacity</option>
+			</select>
+		</div>
 
-
-
-                    <div class="col-sm-4 container cust-padding-top">
-                        <div class="cust-padding-bottom">
-                            Length
-                        </div>
-                        <select class="spice-color">
-                            <option>char* arr</option>
-                            <option>int length</option>
-                            <option>int capacity</option>
-                        </select>
-                    </div>
-
-
-                    <div class="col-sm-4 container cust-padding-top">
-                        <div class="cust-padding-bottom">
-                            Capacity
-                        </div>
-                        <select class="spice-color">
-                            <option>char* arr</option>
-                            <option>int length</option>
-                            <option>int capacity</option>
-                        </select>
-                    </div>
-
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary spice-color spice-button" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary spice-color spice-button" data-dismiss="modal">Save changes</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+		<button type="button" class="btn btn-primary pull-right spice-color spice-button">Apply</button>
+		<div class="clearfix"></div>
+	</form>
 </div>
