@@ -4,50 +4,60 @@
 	<form>
 		<div class="form-group spice-color row">
 			<div class="col-sm-6">
-				<label for="var-chooser">Variable</label>
-				<select id="var-chooser" class="form-control spice-color">
-					<option>arr1</option>
-					<option>tree1</option>
-					<option>hash1</option>
-				</select>
-			</div>
-
-			<div class="col-sm-6">
-				<label for="type-chooser">Type</label>
+				<label for="type-chooser">SPICE Type</label>
 				<select id="type-chooser" class="form-control spice-color">
 					<option>Vector</option>
 					<option>Tree</option>
 					<option>Hash Map</option>
 				</select>
 			</div>
+
+			<div class="col-sm-6">
+				<label for="var-chooser">Program Type</label>
+				<select id="var-chooser" class="form-control spice-color">
+					<option>std::vector&lt;int&gt;</option>
+					<option>std::map</option>
+					<option>std::unordered_map</option>
+				</select>
+			</div>
 		</div>
 
-		<div class="form-group spice-color">
-			<label>Data Pointer</label>
-			<select class="form-control spice-color">
-				<option selected>char* arr</option>
-				<option>int length</option>
-				<option>int capacity</option>
-			</select>
-		</div>
+		<fieldset class="form-horizontal">
+			<legend class="spice-color">Fields</legend>
 
-		<div class="form-group spice-color">
-			<label>Length</label>
-			<select class="form-control spice-color">
-				<option>char* arr</option>
-				<option selected>int length</option>
-				<option>int capacity</option>
-			</select>
-		</div>
+			<div class="form-group spice-color">
+				<label class="col-sm-6">Data Pointer</label>
+				<div class="col-sm-6">
+					<select class="form-control spice-color">
+						<option selected>int *data</option>
+						<option>size_t length</option>
+						<option>size_t capacity</option>
+					</select>
+				</div>
+			</div>
 
-		<div class="form-group spice-color">
-			<label>Capacity</label>
-			<select class="form-control spice-color">
-				<option>char* arr</option>
-				<option>int length</option>
-				<option selected>int capacity</option>
-			</select>
-		</div>
+			<div class="form-group spice-color">
+				<label class="col-sm-6">Length</label>
+				<div class="col-sm-6">
+					<select class="form-control spice-color">
+						<option>int *data</option>
+						<option selected>size_t length</option>
+						<option>size_t capacity</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group spice-color">
+				<label class="col-sm-6">Capacity</label>
+				<div class="col-sm-6">
+					<select class="form-control spice-color">
+						<option>int *data</option>
+						<option>size_t length</option>
+						<option selected>size_t capacity</option>
+					</select>
+				</div>
+			</div>
+		</fieldset>
 
 		<button type="button" class="btn btn-primary pull-right spice-color spice-button">Apply</button>
 		<div class="clearfix"></div>
