@@ -29,9 +29,18 @@
         </div>
 
         <div class="col-sm-9">
-            <pre class="spice-color">fn main() {
-    println!("hello world");
-}</pre>
+
+		<div class="code-viewer">
+			{{#lines}}
+				<div class="line">
+					<div class="col line-number">{{@index}}</div>
+					<div class="col code-textbox">{{{this}}}</div>
+				</div>
+			{{/lines}}
+		</div>
+            <!--<pre class="spice-color">fn main() {-->
+    <!--println!("hello world");-->
+<!--}</pre>-->
         </div>
     </div>
 </div>
